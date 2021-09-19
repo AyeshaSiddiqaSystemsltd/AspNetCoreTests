@@ -52,3 +52,8 @@ steps:
   inputs:
       command: 'test'
       projects: '$(System.DefaultWorkingDirectory)\AspNetCoreTests\AspNetCoreTests.IntegrationTests'
+      
+- task: DotNetCoreCLI@2
+  inputs:
+      command: 'test'
+      projects: '$(System.DefaultWorkingDirectory)\AspNetCoreTests\AspNetCoreTests.UnitTests'
