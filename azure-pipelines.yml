@@ -38,6 +38,8 @@ steps:
     testAssemblyVer2: 'AspNetCoreTests/AspNetCoreTests.UnitTests/run-tests.bat'
     searchFolder: '$(System.DefaultWorkingDirectory)'
     
-- task: PowerShell@2
+- task: PublishTestResults@2
   inputs:
-    filePath: 'AspNetCoreTests/AspNetCoreTests.UnitTests/run-tests.bat'
+    testResultsFormat: 'VSTest'
+    testResultsFiles: '**/TEST-*.xml'
+    
