@@ -28,18 +28,9 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-# - task: VSTest@2
-#   inputs:
-#     platform: '$(buildPlatform)'
-#     configuration: '$(buildConfiguration)'
-- task: VSTest@2
+
+- task: PowerShell@2
   inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: 'AspNetCoreTests/AspNetCoreTests.UnitTests/run-tests.bat'
-    searchFolder: '$(System.DefaultWorkingDirectory)'
-    
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'VSTest'
-    testResultsFiles: '**/TEST-*.xml'
+    targetType: 'inline'
+    script: 'dotnet test ~/AspNetCoreTests/AspNetCoreTests.UnitTests/AspNetCoreTests.UnitTests.csproj --collect "Code Coverage"'
     
