@@ -41,10 +41,14 @@ steps:
 #       !**\obj\**
 #     searchFolder: '$(System.DefaultWorkingDirectory)'
 #     codeCoverageEnabled: true
-- task: VSTest@2
+# - task: VSTest@2
+#   inputs:
+#     testSelector: 'testAssemblies'
+#     testAssemblyVer2: |
+#      *.csproj
+#     searchFolder: '''
+#     codeCoverageEnabled: true
+- task: DotNetCoreCLI@2
   inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-     *.csproj
-    searchFolder: '$(System.DefaultWorkingDirectory)\AspNetCoreTests\AspNetCoreTests.IntegrationTests'
-    codeCoverageEnabled: true
+      command: 'test'
+      projects: '$(System.DefaultWorkingDirectory)\AspNetCoreTests\AspNetCoreTests.IntegrationTests'
