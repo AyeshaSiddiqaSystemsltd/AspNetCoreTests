@@ -35,5 +35,9 @@ steps:
 - task: VSTest@2
   inputs:
     testSelector: 'testAssemblies'
-    testAssemblyVer2: '/AspNetCoreTests/AspNetCoreTests.IntegrationTests/AspNetCoreTests.IntegrationTests.csproj'
+    testAssemblyVer2: 'AspNetCoreTests/AspNetCoreTests.UnitTests/run-tests.bat'
     searchFolder: '$(System.DefaultWorkingDirectory)'
+    
+- task: PowerShell@2
+  inputs:
+    filePath: 'AspNetCoreTests/AspNetCoreTests.UnitTests/run-tests.bat'
