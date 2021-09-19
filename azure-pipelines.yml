@@ -35,5 +35,5 @@ steps:
 - task: VSTest@2
   inputs:
     testSelector: 'testAssemblies'
-    testAssemblyVer2: '/AspNetCoreTests/AspNetCoreTests.IntegrationTests'
+    testAssemblyVer2: '/AspNetCoreTests/AspNetCoreTests.IntegrationTests/AspNetCoreTests.IntegrationTests.csproj'
     searchFolder: '$(System.DefaultWorkingDirectory)'
