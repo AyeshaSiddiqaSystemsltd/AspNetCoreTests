@@ -45,6 +45,6 @@ steps:
   inputs:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
-     *.dll
-    searchFolder: '$(System.DefaultWorkingDirectory)\AspNetCoreTests\AspNetCoreTests.UnitTests\bin\Release\net5.0'
+     *.csproj
+    searchFolder: '$(System.DefaultWorkingDirectory)\AspNetCoreTests\AspNetCoreTests.IntegrationTests\bin\Release\net5.0'
     codeCoverageEnabled: true
